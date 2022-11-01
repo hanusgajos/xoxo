@@ -1,2 +1,2 @@
 # xoxo
-kółko i krzyżykjajo
+kółko i krzyżyk
