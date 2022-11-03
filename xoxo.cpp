@@ -4,79 +4,38 @@ char a[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 int x = 0;
 int o = 0;
 
-bool winx()
+bool win(char h)
 {
-    std::cout << "tgtggttg" << std::endl;
 
-    if (a[0] == 'X' && a[1] == 'X' && a[2] == 'X')
+    if (a[0] == h && a[1] == h && a[2] == h)
     {
         return true;
     }
-    else if (a[0] == 'X' && a[6] == 'X' && a[3] == 'X')
+    else if (a[0] == h && a[6] == h && a[3] == h)
     {
         return true;
     }
-    else if (a[0] == 'X' && a[4] == 'X' && a[8] == 'X')
+    else if (a[0] == h && a[4] == h && a[8] == h)
     {
         return true;
     }
-    else if (a[6] == 'X' && a[4] == 'X' && a[2] == 'X')
+    else if (a[6] == h && a[4] == h && a[2] == h)
     {
         return true;
     }
-    else if (a[3] == 'X' && a[4] == 'X' && a[5] == 'X')
+    else if (a[3] == h && a[4] == h && a[5] == h)
     {
         return true;
     }
-    else if (a[1] == 'X' && a[4] == 'X' && a[7] == 'X')
+    else if (a[1] == h && a[4] == h && a[7] == h)
     {
         return true;
     }
-    else if (a[6] == 'X' && a[7] == 'X' && a[8] == 'X')
+    else if (a[6] == h && a[7] == h && a[8] == h)
     {
         return true;
     }
-    else if (a[2] == 'X' && a[5] == 'X' && a[8] == 'X')
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool wino()
-{
-    if (a[0] == 'O' && a[1] == 'O' && a[2] == 'O')
-    {
-        return true;
-    }
-    else if (a[0] == 'O' && a[6] == 'O' && a[3] == 'O')
-    {
-        return true;
-    }
-    else if (a[0] == 'O' && a[4] == 'O' && a[8] == 'O')
-    {
-        return true;
-    }
-    else if (a[6] == 'O' && a[4] == 'O' && a[2] == 'O')
-    {
-        return true;
-    }
-    else if (a[3] == 'O' && a[4] == 'O' && a[5] == 'O')
-    {
-        return true;
-    }
-    else if (a[1] == 'O' && a[4] == 'O' && a[7] == 'O')
-    {
-        return true;
-    }
-    else if (a[6] == 'O' && a[7] == 'O' && a[8] == 'O')
-    {
-        return true;
-    }
-    else if (a[2] == 'O' && a[5] == 'O' && a[8] == 'O')
+    else if (a[2] == h && a[5] == h && a[8] == h)
     {
         return true;
     }
@@ -125,7 +84,7 @@ int main(int, char **)
 
             a[x - 1] = 'X';
         }
-        if (winx())
+        if (win('X'))
         {
             std::cout << "Gracz 1 wygrał" << std::endl;
             std::cout << a[0] << " | " << a[1] << " | " << a[2] << std::endl;
@@ -166,7 +125,7 @@ int main(int, char **)
             continue;
         }
 
-        if (wino())
+        if (win('O'))
         {
             std::cout << "Gracz 2 wygrał" << std::endl;
             std::cout << a[0] << " | " << a[1] << " | " << a[2] << std::endl;
@@ -176,11 +135,11 @@ int main(int, char **)
             std::cout << a[6] << " | " << a[7] << " | " << a[8] << std::endl;
             break;
         }
-        //   std::cout << "\x1b[1;mHell" << std::endl;
+        //   std::cout << "\h1b[1;mHell" << std::endl;
 
         //   for (int i = 0; i < 256; i++)
         //  {
-        //     std::cout << "\x1b[38;5;" << i << "m " << i;
+        //     std::cout << "\h1b[38;5;" << i << "m " << i;
         //  }
     }
 }
