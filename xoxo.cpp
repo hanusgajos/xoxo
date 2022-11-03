@@ -4,6 +4,15 @@ char a[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 int x = 0;
 int o = 0;
 
+void showBoard()
+{
+    std::cout << a[0] << " | " << a[1] << " | " << a[2] << std::endl;
+    std::cout << "----------" << std::endl;
+    std::cout << a[3] << " | " << a[4] << " | " << a[5] << std::endl;
+    std::cout << "----------" << std::endl;
+    std::cout << a[6] << " | " << a[7] << " | " << a[8] << std::endl;
+}
+
 bool win(char h)
 {
 
@@ -60,12 +69,9 @@ int main(int, char **)
     {
 
         std::cout << "Player 1's turn:" << std::endl;
-        std::cout << a[0] << " | " << a[1] << " | " << a[2] << std::endl;
-        std::cout << "----------" << std::endl;
-        std::cout << a[3] << " | " << a[4] << " | " << a[5] << std::endl;
-        std::cout << "----------" << std::endl;
-        std::cout << a[6] << " | " << a[7] << " | " << a[8] << std::endl;
-        std::cin >> x;
+        showBoard();
+        std::cin >>
+            x;
         if (a[x - 1] != ' ')
         {
             std::cerr << "taken" << std::endl;
@@ -87,20 +93,12 @@ int main(int, char **)
         if (win('X'))
         {
             std::cout << "Gracz 1 wygrał" << std::endl;
-            std::cout << a[0] << " | " << a[1] << " | " << a[2] << std::endl;
-            std::cout << "----------" << std::endl;
-            std::cout << a[3] << " | " << a[4] << " | " << a[5] << std::endl;
-            std::cout << "----------" << std::endl;
-            std::cout << a[6] << " | " << a[7] << " | " << a[8] << std::endl;
+            showBoard();
             break;
         }
 
         std::cout << "Player 2's turn:" << std::endl;
-        std::cout << a[0] << " | " << a[1] << " | " << a[2] << std::endl;
-        std::cout << "----------" << std::endl;
-        std::cout << a[3] << " | " << a[4] << " | " << a[5] << std::endl;
-        std::cout << "----------" << std::endl;
-        std::cout << a[6] << " | " << a[7] << " | " << a[8] << std::endl;
+        showBoard();
         std::cin >> o;
         if (std::cin.good())
         {
@@ -128,11 +126,7 @@ int main(int, char **)
         if (win('O'))
         {
             std::cout << "Gracz 2 wygrał" << std::endl;
-            std::cout << a[0] << " | " << a[1] << " | " << a[2] << std::endl;
-            std::cout << "----------" << std::endl;
-            std::cout << a[3] << " | " << a[4] << " | " << a[5] << std::endl;
-            std::cout << "----------" << std::endl;
-            std::cout << a[6] << " | " << a[7] << " | " << a[8] << std::endl;
+            showBoard();
             break;
         }
         //   std::cout << "\h1b[1;mHell" << std::endl;
